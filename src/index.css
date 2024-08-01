@@ -1,13 +1,128 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+.App {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: transparent;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+  color: #fff; 
+  text-align: center;
+}
+h1 {
+  font-size: 2rem;
+  margin-bottom: 20px;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+
+form, .search-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px; 
+  gap: 10px; 
+}
+
+
+input[type="text"], 
+input[type="search"] {
+  padding: 12px;
+  border: 1px solid #333; 
+  border-radius: 4px;
+  background-color: #222; 
+  color: #fff; 
+  font-size: 16px;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+  box-sizing: border-box;
+  width: 100%; 
+  max-width: 400px; 
+}
+
+input[type="text"]::placeholder, 
+input[type="search"]::placeholder {
+  color: #888; 
+}
+
+input[type="search"]:focus, 
+input[type="text"]:focus {
+  background-color: #333; 
+  border-color: #007bff;
+  outline: none;
+}
+
+
+button {
+  padding: 12px;
+  border: 1px solid #0056b3 ;
+  border-radius: 4px;
+  background-color:transparent;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+button:hover {
+  
+  transform: scale(1.05); 
+}
+
+button:disabled {
+  background-color: #555; 
+  cursor: not-allowed;
+}
+
+
+ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+li {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px;
+  border-bottom: 1px solid #333; 
+  background-color:transparent; 
+  border-radius: 4px;
+  margin-bottom: 10px;
+  transition: background-color 0.3s ease;
+}
+
+li:hover {
+  background-color: #333;
+}
+span {
+  flex: 1;
+  cursor: pointer;
+  text-align: left;
+  color: #fff;
+  margin-right: 10px;
+}
+span.completed {
+  text-decoration: line-through;
+  color: #888; 
+}
+
+div.expandable-content {
+  border-top: 1px solid #444;
+  margin-top: 10px;
+  padding-top: 10px;
+  color: #bbb;
+  text-align: left;
+  font-size: 14px;
+}
+.search-container {
+  display: flex;
+  margin-bottom: 20px;
+  align-items: center;
+  
+  justify-content: center;
+}
+.task-input-container {
+  display: flex;
+  margin-bottom: 20px; 
+  align-items: center;
+  justify-content: center;
 }
