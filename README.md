@@ -2,47 +2,38 @@
 
 ## Overview
 
-This Todo List application is a simple, responsive, and interactive web app built using React. It allows users to manage tasks by adding, editing, marking as completed, and deleting them. The application features an expandable list for detailed task descriptions, a search functionality, and a visually appealing design with a dark theme.
+The Todo List Application is a simple React-based web app that allows users to manage their tasks. Users can add, edit, delete, and mark tasks as completed. The application features a search bar to filter tasks and displays tasks in an expandable list format. It uses a dummy JSON file for data storage and local storage to persist tasks.
 
 ## System Design
 
-The application consists of the following key components:
+### Features
+- **Create Task**: Users can add new tasks with a description.
+- **Update Task**: Users can edit existing tasks.
+- **Mark as Done**: Users can mark tasks as completed.
+- **Search Tasks**: Users can filter tasks using a search bar.
+- **Expandable List**: Tasks can be expanded to show additional details like descriptions and timestamps.
 
-1. **Task Management**: Users can create new tasks, update existing ones, mark tasks as completed, and delete tasks.
-2. **Expandable List**: Tasks are displayed in a list format, and each task can be expanded to show additional details such as a description and the last updated timestamp.
-3. **Search Functionality**: Users can filter tasks using the search bar, which updates the displayed tasks in real-time.
-4. **Persistent Storage**: Tasks are stored in the browser's local storage to ensure data persists between sessions.
+### Data Storage
+The application uses a dummy JSON file (`src/data/tasks.json`) as a data repository for the initial data setup. For persisting user tasks, the application utilizes the browser's local storage.
 
 ## Implementation
 
 ### Frontend
+- **Framework**: React
+- **Styling**: CSS for layout and styling
+- **Components**:
+  - **App.js**: Main component that manages the state of tasks and handles user interactions.
+  - **TodoInput.js**: Component for adding new tasks.
+  - **TodoItem.js**: Component for displaying and managing individual tasks.
+  - **SearchBar.js**: Component for filtering tasks.
 
-- **Framework**: React is used to build the frontend of the application.
-- **Styling**: The application is styled using CSS, with a focus on a modern and clean dark-themed design.
-- **State Management**: React's state and hooks are used for managing task data and UI states.
-- **Icons**: Icons are used for buttons to enhance the user experience, making it intuitive to perform actions such as adding, editing, and deleting tasks.
+### Setup and Running the Application
 
-### Data Storage
-
-- **Local Storage**: The application uses the browser's local storage to save tasks, ensuring that data persists even after the page is refreshed.
-
-## Setup and Run
-
-### Prerequisites
-
-Ensure you have the following installed:
-
-- Node.js (with npm)
-- Git
-
-### Installation
-
-1. **Clone the Repository:**
+1. **Clone the Repository**
    ```bash
    git clone https://github.com/GauravKapale/todo-list-app.git
+   cd todo-list-app
 
-2. Navigate to the project directory:
-cd todo-list-app
 
 3. Install dependencies:
 npm install
