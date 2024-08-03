@@ -28,19 +28,20 @@ body {
   color: #eee;
   width: 200px;
 }
-li {
+
+.todo-item {
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 10px;
   border-bottom: 1px solid #444;
-  background-color: #222;
+  background-color:transparent;
   border-radius: 4px;
   margin-bottom: 10px;
   transition: background-color 0.3s ease;
 }
 
-li.completed .todo-text {
+.todo-item.completed .todo-text {
   text-decoration: line-through;
   color: #777;
 }
@@ -61,30 +62,19 @@ li.completed .todo-text {
   margin: 0;
 }
 
-.todo-edit-form {
-  display: flex;
-  flex-direction: column;
-  
-}
-.update-input {
+.expandable-content {
+  margin-top: 10px;
   padding: 10px;
-  border: 1px solid #444;
-  border-radius: 4px;
+  border-top: 1px solid #444;
   background-color: #333;
-  color: #eee;
-  margin-bottom: 5px;
-  width: 200px;
+  border-radius: 4px;
+  font-size: 14px;
 }
 
-.todo-item-buttons {
-  display: flex;
-  gap: 5px;
-}
-
-.add-button, .search-button, .expand-button, .update-button, .delete-button, .cancel-button, .edit-button {
+.expand-button, .edit-button, .delete-button, .update-button, .cancel-button {
   background-color: transparent;
   color: white;
-  border: none;
+  border: 1px solid white;
   border-radius: 4px;
   width: 40px;
   height: 40px;
@@ -95,14 +85,13 @@ li.completed .todo-text {
   transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
-.add-button:hover, .search-button:hover, .expand-button:hover, .update-button:hover, .delete-button:hover, .cancel-button:hover, .edit-button:hover {
+.expand-button:hover, .edit-button:hover, .delete-button:hover, .update-button:hover, .cancel-button:hover,.add-button:hover,.search-button:hover {
   background-color: #0056b3;
   transform: scale(1.05);
 }
 
-
 .expand-button {
-  background-color: #444;
+  background-color:transparent;
 }
 
 .expandable-content {
