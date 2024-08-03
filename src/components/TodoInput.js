@@ -1,11 +1,13 @@
 import React, { useState } from 'react';
+import '../App.css';
 
 const TodoInput = ({ addTodo }) => {
   const [text, setText] = useState('');
   const [description, setDescription] = useState('');
 
-  const handleAddClick = () => {
-    if (text.trim()) {
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (text.trim() !== '') {
       addTodo(text, description);
       setText('');
       setDescription('');
@@ -16,19 +18,19 @@ const TodoInput = ({ addTodo }) => {
     <div className="task-input-container">
       <input
         type="text"
-        placeholder="Enter task title"
+        className="task-input"
+        placeholder="Add a new task"
         value={text}
         onChange={(e) => setText(e.target.value)}
-        className="task-input"
       />
       <input
         type="text"
-        placeholder="Enter task description"
+        className="task-input"
+        placeholder="Description"
         value={description}
         onChange={(e) => setDescription(e.target.value)}
-        className="task-input"
       />
-      <button onClick={handleAddClick} className="add-button">
+      <button className="add-button" onClick={handleSubmit}>
         <i className="fas fa-plus"></i>
       </button>
     </div>

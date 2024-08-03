@@ -1,6 +1,5 @@
-
 body {
-  background: url('https://miro.medium.com/v2/resize:fit:1400/1*WGD5c7xGu1h6qASMdzTf5g.png') no-repeat center center fixed;
+  background: url('https://images.unsplash.com/photo-1644329843491-99edfc83de04?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTh8fHRvJTIwZG8lMjBsaXN0fGVufDB8fDB8fHww') no-repeat center center fixed;
   background-size: cover;
   color: #fff;
   font-family: 'Poppins', sans-serif;
@@ -8,88 +7,36 @@ body {
   padding: 0;
 }
 
-
 .App {
   max-width: 800px;
   margin: 0 auto;
   padding: 20px;
-  background: rgba(0, 0, 0, 0.7); 
-  border-radius: 8px;
 }
-
-
-h1 {
-  text-align: center;
-  color: #fff;
-  margin-top: 20px;
-  font-size: 2.5em;
-  font-weight: 700;
-  letter-spacing: 1px;
-}
-
-
 .task-input-container {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   gap: 10px;
   margin-bottom: 20px;
 }
 
-
-.task-input {
-  padding: 12px;
-  border: none;
-  border-radius: 8px;
+.task-input, .search-input {
+  padding: 10px;
+  border: 1px solid #444;
+  border-radius: 4px;
   background-color: #333;
   color: #eee;
-  width: 100%;
-  max-width: 300px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
-  transition: background-color 0.3s ease, color 0.3s ease;
+  width: 200px;
 }
-
-.task-input:focus {
-  background-color: #444;
-  color: #fff;
-  outline: none;
-}
-
-
-.add-button {
-  background-color: transparent;
-  color: white;
-  border: 2px solid #0056b3;
-  border-radius: 8px;
-  width: 50px;
-  height: 50px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  transition: background-color 0.3s ease, transform 0.2s ease;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
-}
-
-.add-button i {
-  font-size: 24px;
-}
-
-.add-button:hover {
-  background-color: rgba(0, 0, 0, 0.3);
-  transform: scale(1.05);
-}
-
-
 li {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 15px;
+  padding: 10px;
   border-bottom: 1px solid #444;
   background-color: #222;
-  border-radius: 8px;
-  margin-bottom: 15px;
+  border-radius: 4px;
+  margin-bottom: 10px;
   transition: background-color 0.3s ease;
 }
 
@@ -101,161 +48,88 @@ li.completed .todo-text {
 .todo-item-content {
   display: flex;
   align-items: center;
-  gap: 15px;
+  gap: 10px;
   flex-grow: 1;
 }
 
 .todo-checkbox {
   cursor: pointer;
-  margin-right: 10px;
 }
 
 .todo-text {
   flex-grow: 1;
   margin: 0;
-  font-size: 1.1em;
 }
 
-.expand-button {
-  background-color: #444;
+.todo-edit-form {
+  display: flex;
+  flex-direction: column;
+  
+}
+.update-input {
+  padding: 10px;
+  border: 1px solid #444;
+  border-radius: 4px;
+  background-color: #333;
+  color: #eee;
+  margin-bottom: 5px;
+  width: 200px;
+}
+
+.todo-item-buttons {
+  display: flex;
+  gap: 5px;
+}
+
+.add-button, .search-button, .expand-button, .update-button, .delete-button, .cancel-button, .edit-button {
+  background-color: transparent;
   color: white;
   border: none;
-  border-radius: 8px;
-  width: 50px;
-  height: 50px;
+  border-radius: 4px;
+  width: 40px;
+  height: 40px;
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
   transition: background-color 0.3s ease, transform 0.2s ease;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
 }
 
-.expand-button i {
-  font-size: 24px;
-}
-
-.expand-button:hover {
-  background-color: #555;
+.add-button:hover, .search-button:hover, .expand-button:hover, .update-button:hover, .delete-button:hover, .cancel-button:hover, .edit-button:hover {
+  background-color: #0056b3;
   transform: scale(1.05);
 }
 
+
+.expand-button {
+  background-color: #444;
+}
 
 .expandable-content {
   margin-top: 10px;
   padding: 10px;
   border-top: 1px solid #444;
   background-color: #333;
-  border-radius: 8px;
+  border-radius: 4px;
   font-size: 14px;
 }
 
 .update-input {
-  padding: 12px;
-  border: none;
-  border-radius: 8px;
+  padding: 10px;
+  border: 1px solid #444;
+  border-radius: 4px;
   background-color: #333;
   color: #eee;
-  width: 200px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+  width: 150px;
 }
 
-.update-button, .delete-button, .cancel-button {
-  background-color: transparent;
-  color: white;
-  border: 2px solid #e74c3c;
-  border-radius: 8px;
-  width: 50px;
-  height: 50px;
+.buttons-container {
   display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  transition: background-color 0.3s ease, transform 0.2s ease;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+  gap: 10px;
 }
 
-.update-button i, .delete-button i, .cancel-button i {
-  font-size: 24px;
-}
-
-.update-button {
-  border-color: #007bff;
-}
-
-.update-button:hover {
-  background-color: rgba(0, 0, 0, 0.3);
-  border-color: #0056b3;
-  transform: scale(1.05);
-}
-
-.delete-button {
-  border-color: #dc3545;
-}
-
-.delete-button:hover {
-  background-color: rgba(0, 0, 0, 0.3);
-  border-color: #c82333;
-  transform: scale(1.05);
-}
-
-.cancel-button {
-  border-color: #555;
-}
-
-.cancel-button:hover {
-  background-color: rgba(0, 0, 0, 0.3);
-  border-color: #444;
-  transform: scale(1.05);
-}
-
-
-.search-bar-container {
-  display: flex;
-  align-items: center;
-  margin-bottom: 20px;
-}
-
-.search-input {
-  padding: 12px;
-  border: none;
-  border-radius: 8px;
-  background-color: #333;
-  color: #eee;
-  width: 100%;
-  max-width: 300px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
-  transition: background-color 0.3s ease, color 0.3s ease;
-}
-
-.search-input:focus {
-  background-color: #444;
+h1 {
+  text-align: center;
   color: #fff;
-  outline: none;
-}
-
-.search-button {
-  background-color: transparent;
-  color: white;
-  border: 2px solid #007bff;
-  border-radius: 8px;
-  width: 50px;
-  height: 50px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  transition: background-color 0.3s ease, transform 0.2s ease;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
-  margin-left: 10px;
-}
-
-.search-button i {
-  font-size: 24px;
-}
-
-.search-button:hover {
-  background-color: rgba(0, 0, 0, 0.3);
-  border-color: #0056b3;
-  transform: scale(1.05);
+  margin-top: 20px;
 }
