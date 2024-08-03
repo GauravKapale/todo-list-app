@@ -22,5 +22,4 @@ cd todo-list-app
 npm install
 
 4. Run the application:
-npm start"# todo-list-app" 
-"# todo-list-app" 
+npm start
