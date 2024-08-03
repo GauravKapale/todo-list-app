@@ -2,17 +2,12 @@ import React, { useState, useEffect } from 'react';
 import TodoInput from './components/TodoInput';
 import TodoItem from './components/TodoItem';
 import SearchBar from './components/SearchBar';
+import tasks from './data/tasks.json'; 
 import './App.css';
 
 const App = () => {
-  const [todos, setTodos] = useState([]);
-  const [filteredTodos, setFilteredTodos] = useState([]);
-
-  useEffect(() => {
-    const storedTodos = JSON.parse(localStorage.getItem('todos')) || [];
-    setTodos(storedTodos);
-    setFilteredTodos(storedTodos);
-  }, []);
+  const [todos, setTodos] = useState(tasks);
+  const [filteredTodos, setFilteredTodos] = useState(tasks);
 
   useEffect(() => {
     localStorage.setItem('todos', JSON.stringify(todos));
@@ -33,7 +28,9 @@ const App = () => {
 
   const toggleTodo = (id) => {
     const updatedTodos = todos.map((todo) =>
-      todo.id === id ? { ...todo, completed: !todo.completed, updatedAt: new Date().toISOString() } : todo
+      todo.id === id
+        ? { ...todo, completed: !todo.completed, updatedAt: new Date().toISOString() }
+        : todo
     );
     setTodos(updatedTodos);
     setFilteredTodos(updatedTodos);
@@ -41,7 +38,9 @@ const App = () => {
 
   const updateTodo = (id, text, description) => {
     const updatedTodos = todos.map((todo) =>
-      todo.id === id ? { ...todo, text, description, updatedAt: new Date().toISOString() } : todo
+      todo.id === id
+        ? { ...todo, text, description, updatedAt: new Date().toISOString() }
+        : todo
     );
     setTodos(updatedTodos);
     setFilteredTodos(updatedTodos);
